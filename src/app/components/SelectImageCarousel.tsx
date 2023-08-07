@@ -32,12 +32,15 @@ export const SelectImageCarousel = () => {
         <SelectImageSingle id={id} filename={filename} url={url} />
         <div className="absolute bottom-0 left-0 w-full">
           <div className="flex flex-row justify-between p-2 m-2 bg-white text-black">
-            <button onClick={handleClickPrevious}>
-              <ArrowLeft />
+            <button onClick={handleClickPrevious} className="hover:bg-gray-500">
+              <ArrowLeft className="w-6 h-6" />
             </button>
-            <div>{filename}</div>
+            <p>{filename}</p>
             <button onClick={handleClickNext}>
-              <ArrowRight />
+              <ArrowRight
+                className="w-6 h-6
+              "
+              />
             </button>
           </div>
         </div>
