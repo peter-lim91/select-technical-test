@@ -6,7 +6,7 @@ export const useImageDataQuery = (id: string) => {
     queryKey: ["image", "face", id],
     queryFn: async () => {
       const response = await fetch(
-        `http://cully-api.vercel.app/api/images/${id}/faces`
+        `https://cully-api.vercel.app/api/images/${id}/faces`
       )
       const { data } = await response.json()
       return data
