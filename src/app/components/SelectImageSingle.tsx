@@ -10,7 +10,7 @@ export const SelectImageSingle = ({ id, filename, url }: ImageType) => {
   if (!faces) return "No Faces Found"
 
   return (
-    <div className="w-full relative">
+    <div className="relative">
       <img src={url} alt={filename}></img>
       {faces.map(({ id, xmax, xmin, ymax, ymin }) => {
         return (

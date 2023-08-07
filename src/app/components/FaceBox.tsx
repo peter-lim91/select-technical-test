@@ -12,19 +12,12 @@ export const FaceBox = ({ id, xmax, xmin, ymax, ymin }: Face) => {
   }
 
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: formatPercentage(ymin),
-        left: formatPercentage(xmin),
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        flexDirection: "row",
-      }}
-    >
+    <>
       <div
         style={{
+          position: "absolute",
+          top: formatPercentage(ymin),
+          left: formatPercentage(xmin),
           width: formatPercentage(xmax - xmin),
           height: formatPercentage(ymax - ymin),
         }}
@@ -33,13 +26,19 @@ export const FaceBox = ({ id, xmax, xmin, ymax, ymin }: Face) => {
       />
       {showOptions && (
         <>
-          <div>
+          <div
+            style={{
+              position: "absolute",
+              top: formatPercentage(ymin),
+              left: formatPercentage(xmax),
+            }}
+          >
             <div>Dummy Item #1</div>
             <div>Dummy Item #2</div>
             <div>Dummy Item #2</div>
           </div>
         </>
       )}
-    </div>
+    </>
   )
 }
