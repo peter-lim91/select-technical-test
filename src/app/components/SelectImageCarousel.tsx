@@ -4,6 +4,8 @@ import { useState } from "react"
 import { SelectImageSingle } from "./SelectImageSingle"
 import { LoadingIcon } from "./LoadingIcon"
 import { useImageListQuery } from "@/hooks/useImageListQuery"
+import ArrowRight from "@/assets/icons/ArrowRight"
+import ArrowLeft from "@/assets/icons/ArrowLeft"
 
 export const SelectImageCarousel = () => {
   const imageListQuery = useImageListQuery()
@@ -30,9 +32,13 @@ export const SelectImageCarousel = () => {
         <SelectImageSingle id={id} filename={filename} url={url} />
         <div className="absolute bottom-0 left-0 w-full">
           <div className="flex flex-row justify-between p-2 m-2 bg-white text-black">
-            <div onClick={handleClickPrevious}>Previous</div>
+            <button onClick={handleClickPrevious}>
+              <ArrowLeft />
+            </button>
             <div>{filename}</div>
-            <div onClick={handleClickNext}>Next</div>
+            <button onClick={handleClickNext}>
+              <ArrowRight />
+            </button>
           </div>
         </div>
       </div>
